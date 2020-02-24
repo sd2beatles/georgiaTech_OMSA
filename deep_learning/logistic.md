@@ -47,7 +47,7 @@ def loss_fn(features, labels):
     cost = -tf.reduce_mean(labels * tf.math.log(hypothesis) + (1 - labels) * tf.math.log(1 - hypothesis))
     return cost
 
-def grad(hypothesis, features, labels):
+def grad(features, labels):
     with tf.GradientTape() as tape:
         loss_value = loss_fn(features, labels)
     return tape.gradient(loss_value, [W,b])
@@ -59,7 +59,7 @@ EPOCHS = 3000
 for step in range(EPOCHS + 1):
     for features, labels in iter(dataset):
         hypothesis = logistic_regression(features)
-        grads = grad(hypothesis, features, labels)
+        grads = grad(features, labels)
         optimizer.apply_gradients(grads_and_vars=zip(grads, [W,b]))
         if step % 300 == 0:
             print("Iter: {}, Loss: {:.4f}".format(step, loss_fn(features, labels)))
