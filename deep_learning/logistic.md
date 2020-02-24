@@ -65,7 +65,8 @@ for step in range(EPOCHS + 1):
             print("Iter: {}, Loss: {:.4f}".format(step, loss_fn(features, labels)))
             # print(hypothesis)
             
-def accuracy_fn(hypothesis, labels):
+def accuracy_fn(hypothesis, labels):    
+    #return 1 if true and o for false
     predicted = tf.cast(hypothesis > 0.5, dtype=tf.float32)
     accuracy = tf.reduce_mean(tf.cast(tf.equal(predicted, labels), dtype=tf.int32))
     return accuracy
