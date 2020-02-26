@@ -1,18 +1,18 @@
-1. Data
+# 1. Data
 
 You can visit the fllowing the website to download the data named 'data-04-zoo.csv'. After the data is prepared, let's get to the next
 step
 
 [https://github.com/hunkim/DeepLearningZeroToAll/blob/master/data-04-zoo.csv]
 
-2.Brief Intrdouction
+# 2.Brief Intrdouction
 
 The data consists of 101 rows and 17 columns and each input fearues desribe the distict features of animlas except the last column which
 shows the group it belongs to. Please note that the whole group ranges from 0 to 6 which amounts to 7 in total. Since our ultimate goal is
 to find the proper group given the input data. The number of labels are more than two, thereby sigmoid function being not applicable as
 the activation function. Let's transform the values to represetnt which class to predict out of the 7 classes?
 
-3. Codes
+# 3. Codes
 
 
 ```python
